@@ -52,9 +52,9 @@ function TodoList() {
         <h1>ToDoList</h1>
         <table>
           <tbody id="todo-body">
-            <ul>
+            <ul  style={{ paddingLeft: '0px' }}>
               {todos.map((todo, index) => (
-                <li style={{ listStyleType: 'none' }}>
+                <li style={{ listStyleType: 'none', }}>
                   {editingIndex === index ? (
                     <input 
                       style={{  
@@ -87,10 +87,9 @@ function TodoList() {
                         <input 
                           style={{ 
                             fontSize: '25px',  
-                            padding: '0px',
                             textDecoration: todo.isCompleted ? 'line-through' : 'none' 
                           }} 
-                          className="margin"
+                          className="margin-check-box"
                           type="checkbox" 
                           checked={todo.isCompleted} 
                           onChange={() => toggleTodo(index)} 
@@ -145,8 +144,6 @@ function TodoList() {
           <input 
             style={{ 
               fontSize: '20px', 
-              // marginRight: '5px', 
-              // marginLeft: '3px', 
               borderRadius: '0', 
               border: '1px solid black' 
             }} 
@@ -163,7 +160,6 @@ function TodoList() {
           className="text-size text-font"
           onClick={addTodo}>Add
         </button>
-      
     </>
   )
 }
